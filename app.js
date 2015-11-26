@@ -39,7 +39,7 @@ module.exports = function(apikey) {
       "&phone="+ phone)
       .header("X-Mashape-Key", apikey)
       .header("Accept", "application/json")
-      .end(function (result) {
+      .end(function (response) {
         if (response.status == 200){
           cb({
             getAPIKey: function() {
@@ -60,6 +60,7 @@ module.exports = function(apikey) {
         }
       });
     }
+  }
 }
 
 function isValidAPIKey(apikey) {

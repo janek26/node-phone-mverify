@@ -1,0 +1,30 @@
+{
+  "name": "phone-mverify",
+  "version": "1.0.0",
+  "description": "Simple wrapper for the RESTapi of mVerify to verify a phone number",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "dependencies": {
+    "unirest": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janek26/node-phone-mverify.git"
+  },
+  "keywords": [
+    "node",
+    "phone",
+    "validator",
+    "mVerify",
+    "api",
+    "rest"
+  ],
+  "author": "Janek Rahrt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janek26/node-phone-mverify/issues"
+  },
+  "homepage": "https://github.com/janek26/node-phone-mverify#readme"
+}

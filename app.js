@@ -34,7 +34,31 @@ module.exports = function(apikey) {
       });
     },
     verifyOTP: function(phone, OTP, cb) {
-      
+      unirest.get(hookUrl+"?"+
+      "code="+ OTP +
+      "&phone="+ phone)
+      .header("X-Mashape-Key", apikey)
+      .header("Accept", "application/json")
+      .end(function (result) {
+        if (response.status == 200){
+          cb({
+            getAPIKey: function() {
+              return apikey;
+            },
+            getNumber: function() {
+              return phone;
+            },
+            success: function() {
+              return JSON.parse(response.body).status;
+            },
+            showResponse: function() {
+              return JSON.parse(response.body).data;
+            }
+          });
+        } else {
+          cb(false);
+        }
+      });
     }
 }
 

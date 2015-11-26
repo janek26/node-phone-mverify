@@ -21,18 +21,20 @@ module.exports = function(apikey) {
             return phone;
           },
           success: function() {
-            return response.body.status;
+            return JSON.parse(response.body).status;
           },
-          response: function() {
-            return response.body.data;
+          showResponse: function() {
+            return JSON.parse(response.body).data;
           }
         });
+      } else {
+        cb(false);
       }
     });
   }
 }
 
 function isValidAPIKey(apikey) {
-  var regex = /^[a-fA-F0-9]{50}$/g;
-  return regex.test(apikey.substring(3));
+  var regex = /^[a-zA-Z0-9]{50}$/g;
+  return regex.test(apikey);
 }
